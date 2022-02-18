@@ -21,30 +21,24 @@ export default function App() {
   const cardElements = data.map((cardData) => {
     return (
       <Card
-        title={cardData.title}
-        price={cardData.price}
-        rating={cardData.stats.rating}
-        reviewCount={cardData.stats.reviewCount}
-        country={cardData.location}
-        img={cardData.coverImg}
+        key={cardData.id}
+        cardData={cardData}
+        // title={cardData.title}
+        // price={cardData.price}
+        // rating={cardData.stats.rating}
+        // reviewCount={cardData.stats.reviewCount}
+        // country={cardData.location}
+        // img={cardData.coverImg}
+        // openSpots={cardData.openSpots}
       />
     );
   });
-
-  //   const cardInfo = {
-  //     img: "../images/swimmer.jpeg",
-  //     rating: 5.0,
-  //     reviewCount: 6,
-  //     country: "Slovenia",
-  //     title: "Life Lessons with Michael Phelps",
-  //     price: 136,
-  //   };
 
   return (
     <div>
       <Navbar />
       <Hero />
-      <div>{cardElements}</div>
+      <section className="cards-list">{cardElements}</section>
     </div>
   );
 }

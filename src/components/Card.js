@@ -1,11 +1,23 @@
 import React from "react";
-// import photo from "../images/swimmer.jpeg";
-// import redstar from "/redstar.png";
+import data from "../data";
 
 export default function Card(props) {
+  console.log(props);
+  let badgeText;
+  if (props.cardData.openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (props.cardData.country === "Online") {
+    badgeText = "ONLINE";
+  }
+
   return (
     <div className="card--container">
-      <img src={props.img} alt="swimmer" className="card--photo" />
+      {badgeText && <div className="card--badge">{badgeText}</div>}
+      <img
+        src={props.cardData.coverImg}
+        alt="swimmer"
+        className="card--photo"
+      />
       <div>
         <div className="card--text">
           <div className="card--rating">
@@ -14,14 +26,14 @@ export default function Card(props) {
               alt="redstar"
               className="card--red-star"
             />
-            <p>{props.rating}</p>
-            <p>({props.reviewCount})</p>
+            <p>{props.cardData.stats.rating}</p>
+            <p>({props.cardData.stats.reviewCount})</p>
             <p> • </p>
-            <p>{props.country}</p>
+            <p>{props.cardData.location}</p>
           </div>
-          <p>{props.title}</p>
+          <p>{props.cardData.title}</p>
           <p>
-            <b>${props.price}</b> / person
+            <b>${props.cardData.price}</b> / person
           </p>
         </div>
       </div>
