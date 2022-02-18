@@ -1,11 +1,11 @@
 import React from "react";
-import photogrid from "../images/photo-grid.png";
+// import photogrid from "../images/photo-grid.png";
 
 export default function Hero() {
   return (
     <div className="hero-div">
       <img
-        src={photogrid}
+        src="/images/photo-grid.png"
         alt="airbnb-front-page-grid"
         className="photo-grid"
       />

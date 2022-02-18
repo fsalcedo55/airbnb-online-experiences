@@ -1,6 +1,6 @@
 import React from "react";
 // import photo from "../images/swimmer.jpeg";
-import redstar from "../images/redstar.png";
+// import redstar from "/redstar.png";
 
 export default function Card(props) {
   return (
@@ -9,7 +9,11 @@ export default function Card(props) {
       <div>
         <div className="card--text">
           <div className="card--rating">
-            <img src={redstar} alt="redstar" className="card--red-star" />
+            <img
+              src="/images/redstar.png"
+              alt="redstar"
+              className="card--red-star"
+            />
             <p>{props.rating}</p>
             <p>({props.reviewCount})</p>
             <p> • </p>
